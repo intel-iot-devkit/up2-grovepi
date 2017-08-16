@@ -18,9 +18,9 @@ Provide your password when asked for apt to install all the required dependencie
 Plug-in the GrovePi+ shield and ensure it is properly aligned with pin 1 (indicated by arrow) before pressing it down, otherwise it will cause the board to reset.
 Run the following command to flash the Firmata sketch:
 
-    avrdude -vv -c linuxgpio -p m328p -U flash:w:firmata.hex
+    avrdude -v -c linuxgpio -p m328p -U flash:w:firmata.hex
 
 The red LED on the shield will turn on meaning it's held in reset. After flashing remove the shield and plug in a cross-over Grove 4 pin cable between the connectors labeled SERIAL and RPISER.
-Plug the shield back in. You can now add the GrovePi+ shield as a subplatform from MRAA.
+Plug the shield back in. You can now add the GrovePi+ shield as a subplatform from MRAA on "/dev/ttyS1".
 
 For code examples using Firmata visit http://mraa.io.
