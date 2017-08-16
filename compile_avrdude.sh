@@ -1,11 +1,12 @@
 #!/bin/bash
 
-#sudo apt-get install libusb-1.0-0-dev libftdi-dev autoconf bison flex bc libtool
+sudo apt update
+sudo apt -y install libusb-1.0-0-dev libftdi-dev autoconf bison flex bc libtool
 
 target=avrdude-6.3
 
 tgz=${target}.tar.gz
-patch=patches/${target}*.patch
+patches=patches/${target}*.patch
 url=http://download.savannah.gnu.org/releases/avrdude/${tgz}
 
 # delete old directory
@@ -26,8 +27,8 @@ if [ -f ${tgz} ]; then
 	tar -xzvf ${tgz} || { echo "Error extracting "${tgz}; exit 1; }
 fi
 
-# patch avrdude.conf.in
-patch -p1 -d ${target} < ${patch} || { echo "Error patching "${target}; exit 1; }
+# patch avrdude.conf.in and linuxgpio.c
+for i in ${patches}; do patch -p1 -d ${target} < $i || { echo "Error patching "${target}; exit 1; }; done
 
 # bootstrap, compile, install
 cd ${target}
