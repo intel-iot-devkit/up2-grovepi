@@ -1,0 +1,38 @@
+--- avrdude-6.3/linuxgpio.c	2016-02-15 12:16:32.000000000 -0800
++++ linuxgpio.c	2017-08-09 15:03:52.415547000 -0700
+@@ -66,7 +66,7 @@
+     return fd;
+   }
+ 
+-  len = snprintf(buf, sizeof(buf), "%ud", gpio);
++  len = snprintf(buf, sizeof(buf), "%u", gpio);
+   r = write(fd, buf, len);
+   close(fd);
+ 
+@@ -84,7 +84,7 @@
+     return fd;
+   }
+ 
+-  len = snprintf(buf, sizeof(buf), "%ud", gpio);
++  len = snprintf(buf, sizeof(buf), "%u", gpio);
+   r = write(fd, buf, len);
+   close(fd);
+ 
+@@ -95,7 +95,7 @@
+ {
+   char filepath[60];
+ 
+-  snprintf(filepath, sizeof(filepath), "/sys/class/gpio/gpio%ud/value", gpio);
++  snprintf(filepath, sizeof(filepath), "/sys/class/gpio/gpio%u/value", gpio);
+   return (open(filepath, O_RDWR));
+ }
+ 
+@@ -104,7 +104,7 @@
+   int fd, r;
+   char buf[60];
+ 
+-  snprintf(buf, sizeof(buf), "/sys/class/gpio/gpio%ud/direction", gpio);
++  snprintf(buf, sizeof(buf), "/sys/class/gpio/gpio%u/direction", gpio);
+ 
+   fd = open(buf, O_WRONLY);
+   if (fd < 0) {
