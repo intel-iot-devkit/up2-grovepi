@@ -34,7 +34,7 @@ Version: 6.3-1
 Architecture: amd64
 Maintainer: Michael Biebl <biebl@debian.org>
 Installed-Size: INSTALLED_SIZE
-Depends: libc6 (>= 2.13-28), libftdi1 (>= 0.20), libncurses5 (>= 5.5-5~), libreadline7 (>= 7.0), libtinfo5, libusb-0.1-4 (>= 2:0.1.12), libusb-1.0-0 (>= 2:1.0.8)
+Depends: libc6 (>= 2.13-28), libftdi1 (>= 0.20), libncurses5 (>= 5.5-5~), libreadline-dev (>= 6.0), libtinfo5, libusb-0.1-4 (>= 2:0.1.12), libusb-1.0-0 (>= 2:1.0.8)
 Suggests: avrdude-doc
 Section: electronics
 Priority: extra

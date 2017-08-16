@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt -y install libusb-1.0-0-dev libftdi-dev autoconf bison flex bc libtool
+sudo apt -y install libreadline-dev libusb-1.0-0-dev libftdi-dev libtool autoconf bison flex bc
 
 target=avrdude-6.3
 
